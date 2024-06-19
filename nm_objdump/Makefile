@@ -1,5 +1,3 @@
-# This Makefile is used to compile two programs, hnm and hobjdump
-
 # Compiler to use
 CC = gcc
 
