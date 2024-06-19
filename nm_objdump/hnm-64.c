@@ -2,16 +2,13 @@
 
 /**
  * print_symbol_table64 - program that prints the symbol table for a 64-bit ELF file
- *
  * this function iterates over the symbols in the given symbol table and prints
  * details about each symbol, such as its name, type, and associated section
- *
  * @section_header: a pointer to the section header of the symbol table
  * @symbol_table: a pointer to the beginning of the symbol table
  * @string_table: a pointer to the beginning of the string table,
  *                which contains the names of the symbols
  * @section_headers: a pointer to the array of section headers for the ELF file
- *
  * Return: nothing (void)
  */
 
@@ -133,21 +130,16 @@ void print_symbol_table64(Elf64_Shdr *section_header, Elf64_Sym *symbol_table,
 	}
 }
 
-
-
 /**
  * process_elf_file64 - program that processes a 64-bit ELF file
  * located at the given file path
- *
  * this function opens the file, verifies its format and endianness,
  * and reads the section headers;
  * it locates the symbol table within the section headers and reads it;
  * finally, it reads the associated string table and calls
  * 'print_symbol_table64' to print the symbols
- *
  * @file_path: a pointer to a string that contains the path to the ELF file
  *             to be processed
- *
  * Return: nothing (void)
  */
 
@@ -235,7 +227,6 @@ void process_elf_file64(char *file_path)
 
 	/* Afficher la table des symboles */
 	print_symbol_table64(&symbol_table_header, symbol_table, string_table, section_headers);
-
 
 	fclose(file);
 

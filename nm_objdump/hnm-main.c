@@ -2,20 +2,16 @@
 
 /**
  * main - the entry point
- *
  * program made for the ELF file processing program
- *
  * this function takes command-line arguments to receive one or more ELF file paths;
  * it checks if at least one file path is provided and opens the specified ELF file
  * in binary read mode;
  * the function reads the ELF header to determine the file class (32-bit or 64-bit)
  * and calls the appropriate processing function for that ELF class;
  * if the file class is not supported, it prints an error message
- *
  * @argc: the count of command-line arguments
  * @argv: the array of command-line arguments,
  *        where argv[1] is expected to be the path to the ELF file
- *
  * Return: 0 on successful execution,
  *         or 0 in case of an error such as missing file argument
  *         or unsupported ELF file type
