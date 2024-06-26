@@ -1,5 +1,3 @@
-/* the big O notations for the following lists operations (one per line, in this exact order): */
-
 O(1)            /* Assigning. Example: holberton[98] = 402 */
 
 O(1)            /* Appending. Example: holberton.append(98) */
