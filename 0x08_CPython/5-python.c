@@ -2,26 +2,20 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-
 #define _ABS(x) ((x) < 0 ? -(x) : (x))
-
 
 /**
  * print_python_int - program that prints a Python integer
- *
  * this function translates a Python integer (PyLongObject)
  * into a C unsigned long int and prints it;
  * it checks if the input PyObject is a valid Python integer
  * and handles large integers that exceed the capacity of
  * a C unsigned long int
- *
  * Error handling:
  * - if the input is not a valid Python integer, prints "Invalid Int Object"
  * - if the integer's absolute value is too large to fit in an unsigned long int,
  *   prints "C unsigned long int overflow"
- *
  * @p: PyObject pointer representing the Python integer object
- *
  * Return: nothing (void)
  */
 

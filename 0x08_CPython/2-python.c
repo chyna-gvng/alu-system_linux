@@ -4,16 +4,12 @@
 /**
  * print_python_bytes - program that prints detailed information
  * about a Python bytes object
- *
  * this function reports the size and first few bytes of the Python bytes object;
  * if the object is not a valid PyBytesObject, an error message is printed
- *
  * the output includes:
  * - the size of the bytes object
  * - the actual bytes up to a maximum of 10 bytes, regardless of the size
- *
  * @p: PyObject pointer representing the Python bytes object
- *
  * Return: nothing (void)
  */
 
@@ -48,22 +44,16 @@ void print_python_bytes(PyObject *p)
 	putchar('\n');
 }
 
-
-
 /**
  * print_python_list - program that prints detailed information
  * about a Python list object
- *
  * this function reports the size and elements of the list;
  * if an element is a bytes object, detailed bytes information is also printed
- *
  * the output includes:
  * - the size of the list
  * - the memory allocation size
  * - the type of each element in the list
- *
  * @p: PyObject pointer representing the Python list object
- *
  * Return: nothing (void)
  */
 

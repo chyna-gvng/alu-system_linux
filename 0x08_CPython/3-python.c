@@ -5,13 +5,10 @@
 /**
  * print_python_bytes - program that prints the size
  * and first few bytes of a Python bytes object
- *
  * this function prints the first 10 bytes or the total bytes
  * if less than 10;
  * if 'p' is not a valid PyBytesObject, an error message is printed
- *
  * @p: PyObject pointer representing the Python bytes object
- *
  * Return: nothing (void)
  */
 
@@ -49,16 +46,11 @@ void print_python_bytes(PyObject *p)
 	fflush(stdout);
 }
 
-
-
 /**
  * print_python_float - program that prints information
  * about a Python float object
- *
  * If 'p' is not a valid PyFloatObject, an error message is printed
- *
  * @p: PyObject pointer representing the Python float object
- *
  * Return: nothing (void)
  */
 
@@ -85,16 +77,11 @@ void print_python_float(PyObject *p)
 	fflush(stdout);
 }
 
-
-
 /**
  * print_python_list - program that prints information
  * about a Python list object
- *
  * If 'p' is not a valid PyListObject, an error message is printed
- *
  * @p: PyObject pointer representing the Python list object
- *
  * Return: nothing (void)
  */
 

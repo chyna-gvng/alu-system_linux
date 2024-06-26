@@ -6,19 +6,15 @@
 /**
  * print_python_string - program that prints information
  * about a Python string object
- *
  * this function will print the type, length, and value of a Python string object;
  * if the provided PyObject is not a valid string, it prints an error message
- *
  * Notes:
  * - the function checks if 'p' is a Unicode object and whether
  *   it's in a ready state for processing
  * - it differentiates between compact and ASCII representations
  *   of Python strings
- *
  * @p: PyObject pointer representing the Python string object;
  *     the object must be a valid Unicode object
- *
  * Return: nothing (void)
  */
 

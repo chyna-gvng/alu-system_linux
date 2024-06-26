@@ -3,13 +3,10 @@
 
 /**
  * print_python_list - program that prints information about a Python list
- *
  * this function prints various pieces of information about the Python list,
  * including its size, the number of allocated slots for elements,
  * and the type names of each element in the list
- *
  * @p: a pointer to the PyObject representing a Python list
- *
  * Return: nothing (void)
  *
  */
