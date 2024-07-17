@@ -1,50 +1,34 @@
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu90 -I. -include socket2.h
+CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89 -g3
 
-# Sources
-COMMON_SRCS = server.c trim.c
-COMMON_OBJS = $(COMMON_SRCS:.c=.o)
+SRC = $(wildcard *.c)
+OBJS = $(patsubst %.c, %.o, $(SRC))
+0 = $(patsubst %.c, %.o, $(wildcard todo_api_0.c)) sockets.c
+1 = $(patsubst %.c, %.o, $(wildcard todo_api_1.c)) sockets.c
+2 = $(patsubst %.c, %.o, $(wildcard todo_api_2.c)) sockets.c
+3 = $(patsubst %.c, %.o, $(wildcard todo_api_3.c)) sockets.c
+4 = $(patsubst %.c, %.o, $(wildcard todo_api_4.c)) sockets.c response.c
+5 = $(patsubst %.c, %.o, $(wildcard todo_api_5.c)) sockets.c response.c
 
-APIS = todo_api_0 todo_api_1 todo_api_2 todo_api_3 todo_api_4 todo_api_5 todo_api_6 todo_api_7
+.PHONY: todo_api_0 todo_api_1 todo_api_2 todo_api_3 todo_api_4 todo_api_5 clean
 
-.PHONY: all clean oclean fclean re $(APIS)
+todo_api_0: $(0)
+	$(CC) $(CFLAGS) $(0) -o todo_api_0
 
-all: $(APIS)
+todo_api_1: $(1)
+	$(CC) $(CFLAGS) $(1) -o todo_api_1
 
-todo_api_0: 4-request.o $(COMMON_OBJS)
-	$(CC) $^ -o $@
+todo_api_2: $(2)
+	$(CC) $(CFLAGS) $(2) -o todo_api_2
 
-todo_api_1: 5-queries.o $(COMMON_OBJS)
-	$(CC) $^ -o $@
+todo_api_3: $(3)
+	$(CC) $(CFLAGS) $(3) -o todo_api_3
 
-todo_api_2: 6-headers.o $(COMMON_OBJS)
-	$(CC) $^ -o $@
+todo_api_4: $(4)
+	$(CC) $(CFLAGS) $(4) -o todo_api_4
 
-todo_api_3: 7-body_parameters.o $(COMMON_OBJS)
-	$(CC) $^ -o $@
-
-todo_api_4: 8-create_todo.o $(COMMON_OBJS)
-	$(CC) $^ -o $@
-
-todo_api_5: 9-retrieve_todos.o $(COMMON_OBJS)
-	$(CC) $^ -o $@
-
-todo_api_6: 10-retrieve_single_todo.o $(COMMON_OBJS)
-	$(CC) $^ -o $@
-
-todo_api_7: 11-delete_todo.o $(COMMON_OBJS)
-	$(CC) $^ -o $@
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+todo_api_5: $(5)
+	$(CC) $(CFLAGS) $(5) -o todo_api_5
 
 clean:
-	$(RM) *.o $(APIS)
-
-oclean:
-	$(RM) *.o
-
-fclean: clean
-	$(RM) $(APIS)
-
-re: fclean all
+	rm -f $(OBJS) todo_api_0 todo_api_1 todo_api_2 todo_api_3 todo_api_4 todo_api_5
